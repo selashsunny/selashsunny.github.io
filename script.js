@@ -1,69 +1,40 @@
-gsap.registerPlugin(ScrollTrigger);
+/* TERMINAL TRANSITION */
+setTimeout(() => {
+  document.getElementById("terminal").style.display = "none";
+  document.getElementById("site").classList.remove("hidden");
+}, 4500);
 
-/* Scroll Progress */
-window.addEventListener("scroll", () => {
-    const scrollTop = document.documentElement.scrollTop;
-    const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+/* MATRIX RAIN */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-    document.getElementById("progress-bar").style.width =
-        (scrollTop / height) * 100 + "%";
-});
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-/* Typing Effect */
-const text = "Cyber Security | Ethical Hacker | Network Engineer";
-let i = 0;
-const typing = document.getElementById("typing-text");
+const chars = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = Array.from({ length: columns }).fill(1);
 
-function typeEffect() {
-    if (i < text.length) {
-        typing.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, 50);
-    }
+function drawMatrix() {
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ff00";
+  ctx.font = fontSize + "px monospace";
+
+  drops.forEach((y, i) => {
+    const text = chars[Math.floor(Math.random() * chars.length)];
+    ctx.fillText(text, i * fontSize, y * fontSize);
+    if (y * fontSize > canvas.height && Math.random() > 0.98) drops[i] = 0;
+    drops[i]++;
+  });
 }
-typeEffect();
 
-/* Skill Bars */
-document.querySelectorAll(".skill-bar div").forEach(bar => {
-    gsap.to(bar, {
-        width: bar.dataset.skill + "%",
-        duration: 1.5,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: bar,
-            start: "top 80%"
-        }
-    });
-});
+setInterval(drawMatrix, 35);
 
-/* Section Animation */
-gsap.utils.toArray(".section").forEach(section => {
-    gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-            trigger: section,
-            start: "top 85%"
-        }
-    });
-});
-
-/* Card Glow */
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-            boxShadow: "0 0 20px #00ffcc",
-            duration: 0.3
-        });
-    });
-
-    card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-            boxShadow: "0 0 0 transparent",
-            duration: 0.3
-        });
-    });
+/* SKILL BAR ANIMATION */
+document.querySelectorAll(".bar div").forEach(bar => {
+  const level = bar.dataset.level;
+  setTimeout(() => bar.style.width = level + "%", 500);
 });
