@@ -36,5 +36,5 @@ setInterval(drawMatrix, 35);
 /* SKILL BAR ANIMATION */
 document.querySelectorAll(".bar div").forEach(bar => {
   const level = bar.dataset.level;
-  setTimeout(() => bar.style.width = level + "%", 500);
+  setTimeout(() => bar.style.width = level + "%", 800);
 });
