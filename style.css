@@ -8,7 +8,6 @@
 body {
   background: black;
   color: #00ffcc;
-  overflow-x: hidden;
 }
 
 /* TERMINAL */
@@ -62,16 +61,26 @@ header p {
 
 /* CARDS */
 .card {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
   background: rgba(0, 255, 204, 0.05);
   border: 1px solid #00ffcc;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .card h2 {
   margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-top: 20px;
+  color: #0ff;
+}
+
+.card span {
+  font-size: 0.85rem;
+  color: #aaa;
 }
 
 /* SKILLS */
