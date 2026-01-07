@@ -1,27 +1,14 @@
-/* GSAP Setup */
 gsap.registerPlugin(ScrollTrigger);
 
-/* Scroll Progress Bar */
+/* Scroll Progress */
 window.addEventListener("scroll", () => {
     const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight =
+    const height =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-    const progress = (scrollTop / scrollHeight) * 100;
-    document.getElementById("progress-bar").style.width = progress + "%";
-});
-
-/* Hero Parallax */
-gsap.to(".hero", {
-    backgroundPosition: "50% 100%",
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-    }
+    document.getElementById("progress-bar").style.width =
+        (scrollTop / height) * 100 + "%";
 });
 
 /* Typing Effect */
@@ -38,7 +25,7 @@ function typeEffect() {
 }
 typeEffect();
 
-/* Skill Bar Animation */
+/* Skill Bars */
 document.querySelectorAll(".skill-bar div").forEach(bar => {
     gsap.to(bar, {
         width: bar.dataset.skill + "%",
@@ -51,7 +38,7 @@ document.querySelectorAll(".skill-bar div").forEach(bar => {
     });
 });
 
-/* Section Fade-in */
+/* Section Animation */
 gsap.utils.toArray(".section").forEach(section => {
     gsap.from(section, {
         opacity: 0,
@@ -64,7 +51,7 @@ gsap.utils.toArray(".section").forEach(section => {
     });
 });
 
-/* Card Hover Glow (Security Theme) */
+/* Card Glow */
 document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("mouseenter", () => {
         gsap.to(card, {
