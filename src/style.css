@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background: black;
+  color: #00ffcc;
+  font-family: monospace;
+}
+
+canvas {
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
