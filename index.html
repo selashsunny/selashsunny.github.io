@@ -1,94 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selash Sunny | Cyber Security Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Selash Sunny | Cyber Security Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- GSAP -->
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-<!-- Scroll Progress Bar -->
-<div id="progress-bar"></div>
+<!-- TERMINAL INTRO -->
+<div id="terminal">
+  <div class="terminal-box">
+    <p>> booting cyber interface...</p>
+    <p>> loading security modules...</p>
+    <p>> authenticating user...</p>
+    <p class="success">> ACCESS GRANTED</p>
+    <p>> Welcome: Selash Sunny</p>
+  </div>
+</div>
 
-<!-- Header -->
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrix"></canvas>
+
+<!-- MAIN CONTENT -->
+<div id="site" class="hidden">
+
 <header>
-    <nav>
-        <h1 class="logo">SelashSunny</h1>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <h1>Selash Sunny</h1>
+  <p>Certified Ethical Hacker | Network Engineer</p>
 </header>
 
-<!-- Hero -->
-<section class="hero parallax">
-    <div class="scan-line"></div>
-    <h2 class="glitch" data-text="Hello, I'm Selash Sunny">
-        Hello, I'm Selash Sunny
-    </h2>
-    <p id="typing-text"></p>
+<section class="card about">
+  <h2>About Me</h2>
+  <p>
+    Cyber Security professional with hands-on experience in penetration testing,
+    network security, and system administration. Passionate about securing
+    digital infrastructure and learning advanced attack & defense techniques.
+  </p>
 </section>
 
-<!-- About -->
-<section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-        Certified Ethical Hacker and Network Engineer with hands-on experience
-        in penetration testing, system administration, and network security.
-    </p>
+<section class="card">
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <span>Penetration Testing</span>
+    <div class="bar"><div data-level="90"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Network Security</span>
+    <div class="bar"><div data-level="85"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Linux / Kali</span>
+    <div class="bar"><div data-level="80"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>Python</span>
+    <div class="bar"><div data-level="70"></div></div>
+  </div>
 </section>
 
-<!-- Skills -->
-<section id="skills" class="section bg-light">
-    <h2>Skills</h2>
-
-    <div class="skill">
-        <span>Penetration Testing</span>
-        <div class="skill-bar"><div data-skill="90"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>Network Security</span>
-        <div class="skill-bar"><div data-skill="85"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>Linux / Kali</span>
-        <div class="skill-bar"><div data-skill="80"></div></div>
-    </div>
-
-    <div class="skill">
-        <span>Python</span>
-        <div class="skill-bar"><div data-skill="70"></div></div>
-    </div>
+<section class="card">
+  <h2>Experience</h2>
+  <ul>
+    <li><b>Network Support Engineer</b> – KVBL</li>
+    <li><b>Cyber Security Research Intern</b> – Red Team Hacker Academy</li>
+    <li><b>System Administrator</b> – Good Shepherd CMI School</li>
+  </ul>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="card-container">
-        <div class="card">
-            <h3>Web App Security Audit</h3>
-            <p>Performed vulnerability assessment using Burp Suite and OWASP Top 10.</p>
-        </div>
-
-        <div class="card">
-            <h3>Network Hardening</h3>
-            <p>Configured firewalls and IDS for secure enterprise networks.</p>
-        </div>
-    </div>
+<section class="card">
+  <h2>Certifications</h2>
+  <ul>
+    <li>CEH v12 – EC-Council</li>
+    <li>Certified Penetration Tester</li>
+    <li>Ethical Hacking Essentials</li>
+    <li>Digital Forensics Essentials</li>
+  </ul>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="sect
+<section class="card contact">
+  <h2>Contact</h2>
+  <p>Email: selashsunny@gmail.com</p>
+  <p>LinkedIn: linkedin.com/in/selashsunny</p>
+</section>
+
+<footer>
+  <p>© 2026 Selash Sunny | Cyber Security Portfolio</p>
+</footer>
+
+</div>
+</body>
+</html>
